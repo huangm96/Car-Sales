@@ -18,30 +18,29 @@ const initialState = {
 };
 
 export const carReducer = (state = initialState, action) => {
-    
-    switch (action.type) {
-      case ADD_FEATURES:
-        
-        return {
-          ...state,
-          car: {
-            ...state.car,
-            features: [...state.car.features, action.payload]
-          }
-        };
-        case REMOVE_FEATURES:
-            
-        return {
-          ...state,
-          car: {
-            ...state.car,
-              features: state.car.features.filter((f) => {
-                  return f.id !== action.payload.id;
-            })
-          }
-        };
-      default:
-        return state;
-    }
+  switch (action.type) {
+    case ADD_FEATURES:
+      
+      return {
+        ...state,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.payload],
+          price: state.car.price + action.payload.price
+        }
+      };
+    case REMOVE_FEATURES:
+      return {
+        ...state,
+        car: {
+          ...state.car,
+          features: state.car.features.filter(f => {
+            return f.id !== action.payload.id;
+          }),
+          price: state.car.price - action.payload.price
+        }
+      };
+    default:
+      return state;
+  }
 };
-

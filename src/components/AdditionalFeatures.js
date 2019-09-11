@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import AdditionalFeature from './AdditionalFeature';
+import AdditionalFeature from "./AdditionalFeature";
 
 const AdditionalFeatures = props => {
   return (
@@ -20,16 +20,12 @@ const AdditionalFeatures = props => {
 };
 
 const mapStateToProps = state => {
-  console.log("mSTP state:", state);
   return {
-    store: state.car.store,
-    
+    store: state.car.store
   };
 };
 
 export default connect(
   mapStateToProps,
-  {  }
+  {}
 )(AdditionalFeatures);
-
-

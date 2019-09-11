@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 const Header = props => {
@@ -15,7 +15,7 @@ const Header = props => {
 
 
 const mapStateToProps = state => {
-  console.log("mSTP state:", state);
+  
   return {
     name: state.car.car.name,
     image: state.car.car.image,

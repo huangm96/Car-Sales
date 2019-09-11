@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { addFeatures } from '../actions';
@@ -21,15 +21,10 @@ const AdditionalFeature = props => {
   );
 };
 
-const mapStateToProps = state => {
-  console.log('mSTP state:', state);
-  return {
-    
-  };
-};
+
 
 export default connect(
-  mapStateToProps,
+  null,
   { addFeatures }
 )(AdditionalFeature);
 

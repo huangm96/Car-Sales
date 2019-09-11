@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 const Total = props => {
   return (
@@ -9,7 +9,7 @@ const Total = props => {
 };
 
 const mapStateToProps = state => {
-  console.log("mSTP state:", state);
+  
   return {
     additionalPrice: state.car.additionalPrice,
     price: state.car.car.price,
